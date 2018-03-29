@@ -22,10 +22,15 @@ class UsersTest extends TestCase
         $this->assertTrue($user->save());
     }
 
-
-    public function testUpdateUser()
+    public function testDeleteUser()
     {
-        User::where('name','test123')->delete();
-        $this->assertDatabaseMissing('users', ['name','test123']);
+        User::where('password','123456')->delete();
+        $this->assertDatabaseMissing('users', ['password','123456']);
+    }
+    public function testUserCount()
+    {
+        $user = User::All();
+        $count = $user->count();
+        $this->assertEquals(50, $count);
     }
 }
