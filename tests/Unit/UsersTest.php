@@ -21,4 +21,12 @@ class UsersTest extends TestCase
         $user->email = 'test@test12.com';
         $this->assertTrue($user->save());
     }
+
+
+    public function testUpdateUser()
+    {
+        $user=User::Find(1);
+        $user->name = 'Steve Smith';
+        $this->assertTrue($user->save());
+    }
 }
