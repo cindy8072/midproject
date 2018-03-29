@@ -19,3 +19,9 @@ Route::get('/about', 'PagesController@about')->name('about');
 Route::get('/contact', 'PagesController@contact')->name('contact');
 
 Route::post('/contact', 'PagesController@store')->name('contact.store');
+
+Route::get('/register', 'PagesController@register')->name('register');
+
+Route::get('/login','PagesController@login')->name('login');
+
+Route::get('/home', 'HomeController@index')->name('home');
