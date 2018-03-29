@@ -23,4 +23,13 @@ class CarsTest extends TestCase
 
         $this->assertTrue($car->save());
     }
+
+    public function testUpdateCar()
+    {
+        $car = car::Find(1);
+        $car->year=2000;
+        car::where('make','honda2018')->delete();
+        $this->assertTrue($car->save());
+
+    }
 }
