@@ -30,4 +30,12 @@ class CarsTest extends TestCase
         $this->assertDatabaseMissing('cars', ['make','honda2018']);
 
     }
+
+    public function testCarCount()
+    {
+
+        $car = Car::All();
+        $count = $car->count();
+        $this->assertEquals(50, $count);
+    }
 }
