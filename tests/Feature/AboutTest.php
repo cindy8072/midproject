@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class LoginTest extends TestCase
+class AboutTest extends TestCase
 {
     /**
      * A basic test example.
@@ -15,7 +15,7 @@ class LoginTest extends TestCase
      */
     public function testExample()
     {
-        $response=$this->get('/login');
+        $response=$this->get('/about');
         $response->assertStatus(200);
 
     }
