@@ -25,8 +25,7 @@ class UsersTest extends TestCase
 
     public function testUpdateUser()
     {
-        $user=User::Find(1);
-        $user->name = 'Steve Smith';
-        $this->assertTrue($user->save());
+        User::where('name','test123')->delete();
+        $this->assertDatabaseMissing('users', ['name','test123']);
     }
 }
