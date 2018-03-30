@@ -22,6 +22,15 @@ class UsersTest extends TestCase
         $this->assertTrue($user->save());
     }
 
+    public function testUpdateUser()
+    {
+        $user = User::Find(1);
+        $user->name = 'Steve Smith';
+        $this->assertTrue($user->save());
+
+    }
+
+
     public function testDeleteUser()
     {
         User::where('password','123456')->delete();
