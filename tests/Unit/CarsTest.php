@@ -33,9 +33,18 @@ class CarsTest extends TestCase
 
     public function testCarCount()
     {
-
         $car = Car::All();
         $count = $car->count();
         $this->assertEquals(50, $count);
+
     }
+
+    public function testCarYear()
+    {
+        $car =  car::inRandomOrder()->first();
+        $year = (int)$car->year;
+        $this->assertInternalType("int",$year);
+
+    }
+
 }
