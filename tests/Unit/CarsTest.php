@@ -47,4 +47,10 @@ class CarsTest extends TestCase
 
     }
 
+    public function testCarMake()
+    {
+        $car=car::Find(1);
+        $this->assertContains($car->make,array('toyota','ford','honda'));
+    }
+
 }
